@@ -1,0 +1,17 @@
+pour voir les changements :
+    git status 
+pour indexe dans un commit 
+    git add . (mets tous les fichiers)
+    git add /chemin/vers/le/fichier (mets un seul fichier )
+pour faire un commit 
+    git commit -m "Name of commit"
+
+pour voir les branch
+    git branch 
+pour créee une branch 
+    git branch NameOfBranch 
+pour supprimer une branc
+    git branch -D NameOfBranch 
+pour aller sur une branch 
+    git checkout NameOfBranch
+    
