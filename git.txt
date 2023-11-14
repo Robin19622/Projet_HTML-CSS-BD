@@ -14,4 +14,8 @@ pour supprimer une branc
     git branch -D NameOfBranch 
 pour aller sur une branch 
     git checkout NameOfBranch
-    
+
+pour pull de github 
+    git pull origin main 
+pour push 
+    git push orgin NameOfBranch:NameOfBranch
