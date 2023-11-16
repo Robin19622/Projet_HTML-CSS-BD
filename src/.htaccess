@@ -1,0 +1,18 @@
+Options +Followsymlinks
+# Activation du module de réécriture d'URL:
+RewriteEngine on 
+
+# règles de réecriture:
+# ^ : tout
+# () : un paramètre
+# [a-z] : une lettre parmi toutes les lettres minuscules
+# + : autant qu'on veut 
+# [0-9] : un chiffre
+# [L] : lecture
+
+# /controleur/action/noville/notype
+RewriteRule ^([a-zA-Z0-9\-\_\/]+)$ /index.php?p=$1 [L]
+
+#ici [a-z]+: autant de miniscule qu'on veut
+# $1: premier paramètre 
+# $2 : deuxième paramètre
