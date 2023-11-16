@@ -40,7 +40,7 @@ http://localhost:8080
 humanRessource
 ```
 
-5. importer le fichier object.sql pour avoir la base de donnée
+5. importer le fichier TD1.sql pour avoir la base de donnée
 
 6. Voir le site en suivant l'url :
 
