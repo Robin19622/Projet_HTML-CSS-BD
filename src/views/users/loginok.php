@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col">
             <form class="form-floating" method="POST" action="/users/logout">
-                <h3>bonjour<?php echo $_SESSION['User']->prenom . " " . $_SESSION['User']->nom ?></h3>
+                <h3>bonjour <?php echo $_SESSION['User']->login ?></h3>
                 <br>
                 <button type="submit" class="btn btn-dark">Se deconnecter </button>
             </form>

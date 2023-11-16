@@ -1,14 +1,18 @@
 <?php
+session_start();
 define('WEBROOT', str_replace("index.php", "", $_SERVER["REQUEST_URI"]));
 define('ROOT', str_replace("index.php", "", $_SERVER["SCRIPT_FILENAME"]));
 //echo "Webroot: " . WEBROOT . '<br>';
 //echo "root: " . ROOT . '<br>';
 
 //phpinfo();
+
+
 require(ROOT . 'config/conf.php');
 require(ROOT . 'core/model.php');
 require(ROOT . 'core/controller.php');
 require(ROOT . 'core/session.php');
+
 $chemin = explode("/", WEBROOT);
 //echo"<PRE>";
 //print_r($chemin);

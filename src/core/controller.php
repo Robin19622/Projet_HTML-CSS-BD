@@ -1,9 +1,10 @@
 <?php
 class controller
 {
-    var $vars = array();
+    var $vars = [];
     var $layout = "default";
     var $Session;
+    var $models = [];
     function __construct()
     {
         // chargement de tout nos modèles en mémoire 
@@ -39,10 +40,10 @@ class controller
     {
         $this->vars = array_merge($this->vars, $d);
     }
-    function liste($listederoulante, $name, $floatingName, $nomidentiiant, $nomidentifiantvariable, $nomaderoule, $listevariable = null)
+    function liste($listederoulante, $name, $floatingName, $nomidentiiant, $nomidentifiantvariable, $nomaderoule, $listevariable = null, $onchange = null)
     {
         echo "<div class='form-floating'>";
-        echo "<select class='form-select mb-3' aria-label='Default select example' name='$name'>";
+        echo "<select class='form-select mb-3' aria-label='Default select example' name='$name'  $onchange>";
         foreach ($listederoulante as $l) {
             echo "<option value='";
             echo $l->$nomidentiiant;
@@ -59,8 +60,5 @@ class controller
         echo "</select>";
         echo "<label for='floatingSelect'>$floatingName</label>";
         echo "</div>";
-    }
-    function saveimage()
-    {
     }
 }

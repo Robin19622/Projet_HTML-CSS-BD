@@ -20,10 +20,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/maisons/admin_index">Maison</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/categorys/admin_index">Categorie</a>
+            <a class="nav-link active" aria-current="page" href="/employees/admin_index">employees</a>
           </li>
   </nav>
   <div class=" container ">
