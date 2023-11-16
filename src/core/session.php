@@ -9,7 +9,7 @@ class Session
 
     function __construct()
     {
-        if (session_status() == PHP_SESSION_NONE) {
+        if (!isset($_SESSION)) {
             session_start();
         }
     }
@@ -52,8 +52,7 @@ class Session
     }
     public function isLogged()
     {
-
-        return isset($_SESSION['User']->nom);
+        return isset($_SESSION['User']->id);
     }
     public function user($key)
     {

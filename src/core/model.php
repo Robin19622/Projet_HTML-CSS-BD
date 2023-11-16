@@ -37,8 +37,8 @@ class Model
         $sql = 'SELECT ' . $fields . ' FROM ' . $this->table . ' WHERE id= :id';
 
         $sth = $this->db->prepare($sql);
-
-        if ($sth->execute(array(':id' => $this->id))) {
+        $sth->bindValue(':id', $this->id, PDO::PARAM_INT);
+        if ($sth->execute()) {
             $data = $sth->fetch(PDO::FETCH_OBJ);
 
             foreach ($data as $key => $value) {
@@ -54,6 +54,7 @@ class Model
 
         $fields = "*";
         $inner = " ";
+        $union = " ";
         $condition = "1=1";
         $order = "id";
         $limit = " ";
@@ -62,6 +63,9 @@ class Model
         }
         if (isset($data['inner'])) {
             $inner = $data['inner'];
+        }
+        if (isset($data['union'])) {
+            $union = $data['union'];
         }
         if (isset($data['condition'])) {
             $condition = $data['condition'];
@@ -77,11 +81,12 @@ class Model
             ' FROM ' . $this->table .
             '  ' . $inner .
             ' Where ' . $condition .
+            ' ' . $union .
             ' Order BY ' . $order .
             ' ' . $limit;
 
         $stmt = $this->db->prepare($sql);
-
+        echo $sql;
         if ($stmt->execute()) {
             $data = $stmt->fetchall(PDO::FETCH_OBJ);
             return $data;
@@ -111,7 +116,9 @@ class Model
 
     function save($data)
     {
-
+        foreach ($data as $key => $value) {
+            $data[$key] = strip_tags($data[$key], conf::$tags);
+        }
 
         if (empty($data['id'])) {
             unset($data["id"]);
@@ -123,7 +130,7 @@ class Model
             }
             $sql = substr($sql, 0, -1);
             $values = substr($values, 0, -1);
-            $sql .= ") Values ( " . $values . " );";
+            $sql .= ") Values ( " . $values . ");";
 
 
             $sth = $this->db->prepare($sql);

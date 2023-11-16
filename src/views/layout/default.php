@@ -22,10 +22,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
 
           <li class="nav-item">
-            <a class="nav-link" href="/categorys">Catégorie</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/maisons"> Maison </a>
+            <a class="nav-link" href="/employees"> employees </a>
           </li>
         </ul>
 
@@ -60,9 +57,7 @@
 
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="/maisons" class="nav-link px-2 text-muted">Maison</a></li>
-      <li class="nav-item"><a href="/categorys" class="nav-link px-2 text-muted">Catégorie</a></li>
-
+      <li class="nav-item"><a href="/employees" class="nav-link px-2 text-muted">employyee</a></li>
     </ul>
   </footer>
 

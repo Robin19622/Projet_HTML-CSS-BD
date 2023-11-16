@@ -1,12 +1,17 @@
 <?php
 class users extends controller
 {
-
-    var $models = array('user');
+    var $user;
+    function __construct()
+    {
+        parent::__construct();
+        $this->loadmodel('user'); // Charger le modèle 'employee'
+        $this->user = $this->models['user'];
+    }
 
     function index()
     {
-        $d = array();
+        $d = [];
         if (!empty($_POST)) {
 
             $user = $this->user->getUser($_POST['login'], $_POST['password']);
