@@ -2,12 +2,12 @@
     <div class="row">
         <div class="col">
             <br>
-            <h1>Bienvenue sur le backoffice Back office </h1>
-            <br>-
+            <h1>Bonjour Admin </h1>
+            <br>
         </div>
     </div>
-    <div class="row">'passagers'[final]
-        <div class="col">]
+    <div class="row">
+        <div class="col">
             <form class="form-floating" method="POST" action="/users/logout">
                 <h3>bonjour <?php echo $_SESSION['User']->login ?></h3>
                 <br>
