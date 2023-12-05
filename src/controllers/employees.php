@@ -1,35 +1,47 @@
 <?php
+
 class employees extends controller
 {
     var $employee;
+    var $department;
+
+    var $job;
+
     function __construct()
     {
         parent::__construct();
-        $this->loadmodel('employee'); // Charger le modèle 'employee'
+        $this->loadModel('employee');
+        $this->loadModel('department');
+        $this->loadModel('job');
+        $this->job = $this->models['job'];
         $this->employee = $this->models['employee'];
+        $this->department = $this->models['department'];
     }
-    function index()
+
+    function index(): void
     {
         $d = [];
-        $d['employees'] =  $this->employee->getLast(999);
+        $d['employees'] = $this->employee->getLast(999);
         $this->set($d);
         $this->render('index');
     }
-    function admin_index()
+
+    function admin_index(): void
     {
         if ($this->Session->isLogged()) {
-            $d = array();
+            $d = [];
             $d['employees'] = $this->employee->getLast(10);
             $this->set($d);
             $this->layout = 'admin';
             $this->render('admin_index');
         } else {
-            $this->Session->setFlash("Appli impiratable " . $_SERVER['REMOTE_ADDR'], '<i class="fas fa-times"></i>', "danger");
+            $this->Session->setFlash("Appli impiratable ".$_SERVER['REMOTE_ADDR'], '<i class="fas fa-times"></i>', "danger");
             $this->layout = 'default';
             $this->render('index');
         }
     }
-    function admin_edit($id = null)
+
+    function admin_edit($id = null): void
     {
         if ($this->Session->isLogged()) {
             if (!empty($_POST)) {
@@ -41,28 +53,31 @@ class employees extends controller
                 } else {
                     $this->Session->setFlash("action non effectue  ", '<i class="fas fa-times"></i>', "success");
                 }
-                $d = array();
+                $d = [];
                 $d['employees'] = $this->employee->getLast(10);
                 $this->set($d);
                 $this->layout = 'admin';
                 $this->render('admin_index');
             } else {
+                $d = [];
                 if (!empty($id)) {
                     $d['employee'] = $this->employee->getEmployee($id);
-                    var_dump($d['employee']);
-                    $this->set($d);
                 }
+                $d['managers']= $this->employee->getAllManagers();
+                $d['departments'] = $this->department->getAllDepartment();
+                $d['jobs'] = $this->job->getAllJobs();
+                $this->set($d);
                 $this->layout = 'admin';
                 $this->render('admin_form');
             }
         } else {
-            $this->Session->setFlash("Appli impiratable " . $_SERVER['REMOTE_ADDR'], '<i class="fas fa-times"></i>', "danger");
+            $this->Session->setFlash("Appli impiratable ".$_SERVER['REMOTE_ADDR'], '<i class="fas fa-times"></i>', "danger");
             $this->layout = 'default';
             $this->render('index');
         }
     }
 
-    function admin_delete($id)
+    function admin_delete($id): void
     {
         if ($this->Session->isLogged()) {
             if ($this->employee->deleteEmployee($id)) {
@@ -70,13 +85,13 @@ class employees extends controller
             } else {
                 $this->Session->setFlash("supression pas ", '<i class="fas fa-times"></i>', "success");
             }
-            $d = array();
+            $d = [];
             $d['employees'] = $this->employee->getLast(999);
             $this->set($d);
             $this->layout = 'admin';
             $this->render('admin_index');
         } else {
-            $this->Session->setFlash("Appli impiratable " . $_SERVER['REMOTE_ADDR'], '<i class="fas fa-times"></i>', "danger");
+            $this->Session->setFlash("Appli impiratable ".$_SERVER['REMOTE_ADDR'], '<i class="fas fa-times"></i>', "danger");
             $this->layout = 'default';
             $this->render('index');
         }

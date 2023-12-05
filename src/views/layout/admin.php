@@ -30,10 +30,8 @@
       </div>
     </div>
   </div>
-  <div class=" container ">
-
+  <div class="container">
     <?php echo $content_for_layout; ?>
-
   </div>
 
   <footer class="container py-5">

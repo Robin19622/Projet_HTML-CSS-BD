@@ -3,11 +3,11 @@
         <div class="col">
             <br>
             <h1>Bienvenue sur le backoffice Back office </h1>
-            <br>
+            <br>-
         </div>
     </div>
-    <div class="row">
-        <div class="col">
+    <div class="row">'passagers'[final]
+        <div class="col">]
             <form class="form-floating" method="POST" action="/users/logout">
                 <h3>bonjour <?php echo $_SESSION['User']->login ?></h3>
                 <br>

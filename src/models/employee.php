@@ -6,7 +6,7 @@ class employee extends Model
     function getLast($num = 6)
     {
         return $this->find(array(
-            "limit" => 'LIMIT ' . $num
+            "limit" => 'LIMIT ' . $num,
         ));
     }
     function getEmployee($id)
@@ -19,10 +19,18 @@ class employee extends Model
     {
         return $this->delete(array(
             "condition" => 'id=' . $id,
+
         ));
     }
     function saveEmployee($data)
     {
         return $this->save($data);
+    }
+
+    function getAllManagers(): false|array|null
+    {
+        return $this->find(array(
+            "order" => ' id',
+        ));
     }
 }

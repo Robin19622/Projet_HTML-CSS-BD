@@ -9,7 +9,6 @@ services:
       - db
     volumes:
       - ./src:/var/www/html
-
   db:
     image: mysql:latest
     environment:
@@ -17,7 +16,6 @@ services:
       MYSQL_DATABASE: project_web
     volumes:
       - ./datadir:/var/lib/mysql
-
   phpmyadmin:
     image: arm64v8/phpmyadmin
     ports:
