@@ -11,11 +11,11 @@ class employees extends controller
     {
         parent::__construct();
         $this->loadModel('employee');
-        $this->loadModel('department');
+        $this->loadModel('departement');
         $this->loadModel('job');
         $this->job = $this->models['job'];
         $this->employee = $this->models['employee'];
-        $this->department = $this->models['department'];
+        $this->department = $this->models['departement'];
     }
 
     public function index(): void

@@ -28,6 +28,9 @@
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/countries/admin_index">countries</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/departements/admin_index">departements</a>
+            </li>
   </nav>
   <div class=" container ">
     <div class="row">
