@@ -13,7 +13,7 @@ services:
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: example
-      MYSQL_DATABASE: project_web
+      MYSQL_DATABASE: humanRessource
     volumes:
       - ./datadir:/var/lib/mysql
   phpmyadmin:

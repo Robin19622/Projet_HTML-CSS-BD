@@ -26,6 +26,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/jobs"> jobs </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/countries"> countries </a>
+            </li>
         </ul>
 
         <form class='d-flex' method='POST' action='/users'>
