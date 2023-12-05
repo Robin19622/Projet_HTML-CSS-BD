@@ -7,7 +7,7 @@ class employees extends controller
 
     var $job;
 
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
         $this->loadModel('employee');
@@ -18,7 +18,7 @@ class employees extends controller
         $this->department = $this->models['department'];
     }
 
-    function index(): void
+    public function index(): void
     {
         $d = [];
         $d['employees'] = $this->employee->getLast(999);
@@ -26,11 +26,11 @@ class employees extends controller
         $this->render('index');
     }
 
-    function admin_index(): void
+    public function admin_index(): void
     {
         if ($this->Session->isLogged()) {
             $d = [];
-            $d['employees'] = $this->employee->getLast(10);
+            $d['employees'] = $this->employee->getAllManagers(10);
             $this->set($d);
             $this->layout = 'admin';
             $this->render('admin_index');
@@ -41,13 +41,10 @@ class employees extends controller
         }
     }
 
-    function admin_edit($id = null): void
+    public function admin_edit($id = null): void
     {
         if ($this->Session->isLogged()) {
             if (!empty($_POST)) {
-                $_POST['JOB_ID'] = "TEST";
-                $_POST['EMAIL'] = "t@gmail.com";
-                $_POST['HIRE_DATE'] = date('Y-m-d');
                 if ($this->employee->saveEmployee($_POST)) {
                     $this->Session->setFlash(" action effectue  ", '<i class="fas fa-check"></i>', "success");
                 } else {
@@ -77,7 +74,7 @@ class employees extends controller
         }
     }
 
-    function admin_delete($id): void
+    public function admin_delete($id): void
     {
         if ($this->Session->isLogged()) {
             if ($this->employee->deleteEmployee($id)) {

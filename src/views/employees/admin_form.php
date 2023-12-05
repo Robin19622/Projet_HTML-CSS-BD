@@ -1,7 +1,6 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-
             <h1> <?php
                 if (isset($employee->id)) {
                     echo "modification";
@@ -10,8 +9,7 @@
     </div>
     <div class="row">
         <div class="col-6">
-            <form class="row g-3 needs-validation" action="/employees/admin_edit/<?php
-            if (isset($employee->id)) echo $employee->id ?>" method="POST" novalidate>
+            <form class="row g-3 needs-validation" action="/employees/admin_edit/<?php if (isset($employee->id)) echo $employee->id ?>" method="POST" novalidate>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingid" placeholder="id vérouillé" name="id" readonly="readonly" value="<?php
                     if (isset($employee->id)) {
@@ -93,7 +91,6 @@
                         Le HIRE_DATE est obligatoire
                     </div>
                 </div>
-
                 <div class="form-floating mb-3">
                     <input type="number" min="1" step="any" class="form-control " id="floatingName" placeholder="SALARY" name="SALARY" value="<?php
                     if (isset($employee->SALARY)) {
@@ -108,18 +105,37 @@
                         Le SALARY est obligatoire
                     </div>
                 </div>
-
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control " id="floatingName" placeholder="COMMISSION_PCT" name="COMMISSION_PCT" value="<?php
+                    if (isset($employee->COMMISSION_PCT)) {
+                        echo $employee->COMMISSION_PCT;
+                    } else {
+                        if (isset($_POST['COMMISSION_PCT'])) {
+                            echo $_POST['COMMISSION_PCT'];
+                        }
+                    } ?>" required>
+                    <label for="floatingName">COMMISSION_PCT</label>
+                    <div class="invalid-feedback">
+                        Le COMMISSION_PCT est obligatoire
+                    </div>
+                </div>
                 <?php
-                echo $this->liste($managers, "MANAGER_ID", "Managers", "id", ['FIRST_NAME','LAST_NAME']);
-                echo $this->liste($jobs, "JOB_ID", "Jobs", "id",  ["JOB_TITLE"]);
+                echo $this->liste(
+                    $managers,
+                    "MANAGER_ID",
+                    "Managers",
+                    "id",
+                    ['FIRST_NAME', 'LAST_NAME']
+                );
+                echo $this->liste($jobs, "JOB_ID", "Jobs", "id", ["JOB_TITLE"]);
                 echo $this->liste($departments, "DEPARTMENT_ID", "Department", "id", ["DEPARTMENT_NAME"]);
                 ?>
+                <button type="submit" class="btn btn-outline-secondary">Valider</button>
+            </form>
         </div>
-        <button type="submit" class="btn btn-outline-secondary">Valider</button>
-        </form>
     </div>
 </div>
-</div>
+
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function () {

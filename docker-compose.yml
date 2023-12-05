@@ -18,6 +18,7 @@ services:
       - ./datadir:/var/lib/mysql
   phpmyadmin:
     image: arm64v8/phpmyadmin
+    #image: amd64/phpmyadmin
     ports:
       - "8080:80"
     depends_on:

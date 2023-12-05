@@ -2,8 +2,7 @@
 class employee extends Model
 {
     var $table = "employees";
-    //ici : $num est un paramètre falcutatif initialisée par defaut a 6 
-    function getLast($num = 6)
+    function getLast(int $num = 10 )
     {
         return $this->find(array(
             "limit" => 'LIMIT ' . $num,
