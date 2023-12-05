@@ -1,60 +1,74 @@
 <?php
+
 class controller
 {
-    var $vars = [];
-    var $layout = "default";
-    var $Session;
-    var $models = [];
+    var array $vars = [];
+    var string $layout = "default";
+    var session $Session;
+    var array $models = [];
+
     function __construct()
     {
-        // chargement de tout nos modèles en mémoire 
         if (isset($this->models)) {
             foreach ($this->models as $m) {
-                $this->loadmodel($m);
+                $this->loadModel($m);
             }
         }
         $this->Session = new session();
     }
-    function loadmodel($name)
+
+    function loadModel($name): void
     {
-        require(ROOT . "models/" . strtolower($name) . ".php");
+        require(ROOT."models/".strtolower($name).".php");
         $this->models[$name] = new $name();
     }
-    function render($filename)
+
+    function render($filename): void
     {
         extract($this->vars);
-
-        // je démarre une mise en mémoire tempoon
         ob_start();
-
-        require(ROOT . 'views/' . get_class($this) . '/' . $filename . '.php');
-
+        require(ROOT.'views/'.get_class($this).'/'.$filename.'.php');
         $content_for_layout = ob_get_clean();
-        if ($this->layout == false) {
+        if (!$this->layout) {
             echo $content_for_layout;
         } else {
-            require(ROOT . 'views/layout/' . $this->layout . '.php');
+            require(ROOT.'views/layout/'.$this->layout.'.php');
         }
     }
-    function set($d)
+
+    function set($d): void
     {
         $this->vars = array_merge($this->vars, $d);
     }
-    function liste($listederoulante, $name, $floatingName, $nomidentiiant, $nomidentifiantvariable, $nomaderoule, $listevariable = null, $onchange = null)
-    {
+
+    function liste(
+        array $listederoulante,
+        string $name,
+        string $floatingName,
+        string $nomidentiiant,
+        array $nomaderoule,
+        array $listevariable = null,
+        string $onchange = null
+    ): void {
         echo "<div class='form-floating'>";
         echo "<select class='form-select mb-3' aria-label='Default select example' name='$name'  $onchange>";
         foreach ($listederoulante as $l) {
             echo "<option value='";
             echo $l->$nomidentiiant;
             echo " ' ";
-            if (isset($listevariable->$nomidentifiantvariable)) {
-                if ($listevariable->$nomidentifiantvariable == $l->$nomidentiiant) {
+            if (isset($listevariable->$name)) {
+                if ($listevariable->$name == $l->$nomidentiiant) {
                     echo 'selected';
                 }
             }
             echo ">";
-            echo $l->$nomaderoule;
+            if (is_array($nomaderoule)) {
+                foreach ($nomaderoule as $fieldName) {
+                    echo $l->$fieldName . ' ';
+                }
+            } else {
+                echo $l->$nomaderoule;
+            }
             echo " </option>";
         }
         echo "</select>";

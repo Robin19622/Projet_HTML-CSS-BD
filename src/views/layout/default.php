@@ -32,6 +32,7 @@
       </div>
     </div>
   </nav>
+  <!-- import des vues à l'intérieur -->
   <div class=" container ">
     <div class="row">
       <div class="col">
