@@ -22,6 +22,9 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/employees/admin_index">employees</a>
           </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/jobs/admin_index">jobs</a>
+            </li>
   </nav>
   <div class=" container ">
     <div class="row">
