@@ -34,6 +34,9 @@
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/locations/admin_index">locations</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/jobhistorys/admin_index">job historys</a>
+            </li>
   </nav>
   <div class=" container ">
     <div class="row">

@@ -34,6 +34,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/locations"> locations </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/jobhistorys"> Les historiques des postes </a>
+            </li>
         </ul>
         <form class='d-flex' method='POST' action='/users'>
           <button class='btn btn-outline-success' type='submit'>Connexion</button>
