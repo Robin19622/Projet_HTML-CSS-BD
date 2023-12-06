@@ -32,4 +32,11 @@ class employee extends Model
             "order" => ' id',
         ));
     }
+
+    function countAllEmployees() {
+        return $this->find(array(
+            "fields" => 'COUNT(*) as total_employees',
+            "limit" => ''
+        ));
+    }    
 }

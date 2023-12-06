@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col">
             <br>
-            <h1> Les countries </h1>
+            <h1> Les pays </h1>
             <br>
             <?php
             foreach ($countries as $c) {

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col">
             <br>
-            <h1> Connection Back office </h1>
+            <h1> Connexion Back office </h1>
             <br>
         </div>
     </div>
@@ -11,7 +11,7 @@
             <form class="form-floating" method="POST" action="/users">
                 <div class=" form-floating mb-3">
                     <input type="text" class="form-control " id="floatingInputInvalid" name="login" placeholder="login" value="">
-                    <label for="floatingInputInvalid">login obligatoire</label>
+                    <label for="floatingInputInvalid">identifiant obligatoire</label>
                 </div>
                 <div class=" form-floating mb-3">
                     <input type="password" class="form-control " id="floatingInputInvalid" name="password" placeholder="password" value="">

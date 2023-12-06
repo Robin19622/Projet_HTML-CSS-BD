@@ -4,7 +4,7 @@
             <h1> <?php
                 if (isset($departement->id)) {
                     echo "Modification";
-                } else echo "Ajout" ?> d'un departement :</h1>
+                } else echo "Ajout" ?> d'un département :</h1>
         </div>
     </div>
     <div class="row">
@@ -30,9 +30,9 @@
                             echo $_POST['DEPARTMENT_NAME'];
                         }
                     } ?>" required>
-                    <label for="floatingName">DEPARTMENT_NAME</label>
+                    <label for="floatingName">nom du département</label>
                     <div class="invalid-feedback">
-                        Le DEPARTMENT_NAME est obligatoire
+                        Le nom du département est obligatoire
                     </div>
                 </div>
                 <?php echo $this->liste($managers, "MANAGER_ID", "Manager", "id", ["FIRST_NAME","LAST_NAME"]);?>

@@ -4,7 +4,7 @@
             <h1> <?php
                 if (isset($countrie->id)) {
                     echo "Modification";
-                } else echo "Ajout" ?> d'un countrie :</h1>
+                } else echo "Ajout" ?> d'un pays :</h1>
         </div>
     </div>
     <div class="row">
@@ -30,9 +30,9 @@
                             echo $_POST['COUNTRIES_NAMES'];
                         }
                     } ?>" required>
-                    <label for="floatingName">COUNTRIES_NAMES </label>
+                    <label for="floatingName">nom du pays </label>
                     <div class="invalid-feedback">
-                        Le COUNTRIES_NAMES est obligatoire
+                        Le nom du pays est obligatoire
                     </div>
                 </div>
                 <div class="form-floating mb-3">
@@ -44,9 +44,9 @@
                             echo $_POST['SHORT_NAMES'];
                         }
                     } ?>" required maxlength="2" >
-                    <label for="floatingName">SHORT_NAMES </label>
+                    <label for="floatingName">nom raccourci </label>
                     <div class="invalid-feedback">
-                        Le SHORT_NAMES est obligatoire
+                        Le nom raccourci est obligatoire
                     </div>
                 </div>
                 <?php echo $this->liste($regions, "REGION_ID", "Regions", "id", ["REGIONS_NAMES"]);?>
