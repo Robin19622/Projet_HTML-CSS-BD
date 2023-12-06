@@ -15,6 +15,7 @@ Ce projet est une application web développée dans le cadre du cours "Technolog
 | ------- | ----------------------------------------------- |
 | LinuxOS | https://docs.docker.com/engine/install/ubuntu/  |
 | MacOS   | https://www.docker.com/products/docker-desktop/ |
+| Windows | https://docs.docker.com/desktop/install/windows-install/     |
 
 2.  Lancez la commande suivante pour extraire l'image et installer le conteneur
 
