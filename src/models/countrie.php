@@ -27,5 +27,11 @@ class countrie extends Model
 
         ));
     }
-
+    public function countAllEmployees()
+    {
+        return $this->find(array(
+            "fields" => 'COUNT(*) as total_employees',
+            "limit" => ''
+        ));
+    }
 }

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col">
             <br>
-            <h1> Les departements </h1>
+            <h1> Les départements </h1>
             <br>
             <table class="table table-hover  table-sm">
                 <thead>

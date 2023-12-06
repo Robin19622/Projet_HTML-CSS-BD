@@ -1,35 +1,21 @@
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<div class="container mt-4">
+<div class="row">
+    <div class="col-12">
+    <h1>Bienvenue sur l'outil de gestion des employés</h1>
+    <p>Ce système va vous permettre de visualiser et gérer les employés avec leurs informations associées.</p>
     </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-            <img src="/webroot/img/1.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
+</div>
+</div>
 
-            </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-            <img src="/webroot/img/2.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
 
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="/webroot/img/3.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
+<div class="container mt-4">
+<div class="row">
+    <div class="col-12">
+    <h3>Vue d'ensemble</h3>
 
-            </div>
-        </div>
+    <p>Nombre total d'employés: [Number of employees]</p>
+    <p>Nombre total de départements : [Number of departments]</p>
+
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+</div>
 </div>

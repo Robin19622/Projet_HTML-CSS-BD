@@ -4,7 +4,7 @@
             <h1> <?php
                 if (isset($job->id)) {
                     echo "Modification";
-                } else echo "Ajout" ?> d'un job :</h1>
+                } else echo "Ajout" ?> d'un poste :</h1>
         </div>
     </div>
     <div class="row">
@@ -30,9 +30,9 @@
                             echo $_POST['JOB_TITLE'];
                         }
                     } ?>" required>
-                    <label for="floatingName">JOB_TITLE</label>
+                    <label for="floatingName">titre du poste</label>
                     <div class="invalid-feedback">
-                        Le JOB_TITLE est obligatoire
+                        Le titre du poste est obligatoire
                     </div>
                 </div>
                 <div class="form-floating mb-3">
@@ -44,9 +44,9 @@
                             echo $_POST['MIN_SALARY'];
                         }
                     } ?>" required>
-                    <label for="floatingName">MIN_SALARY</label>
+                    <label for="floatingName">salaire minimum</label>
                     <div class="invalid-feedback">
-                        Le MIN_SALARY est obligatoire
+                        Le salaire minimum est obligatoire
                     </div>
                 </div>
                 <div class="form-floating mb-3">
@@ -58,9 +58,9 @@
                             echo $_POST['MAX_SALARY'];
                         }
                     } ?>" required>
-                    <label for="floatingName">MAX_SALARY</label>
+                    <label for="floatingName">salaire maximum</label>
                     <div class="invalid-feedback">
-                        Le MAX_SALARY est obligatoire
+                        Le salaire maximum est obligatoire
                     </div>
                 </div>
                 <button type="submit" class="btn btn-outline-secondary">Valider</button>

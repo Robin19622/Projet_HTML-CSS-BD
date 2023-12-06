@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col">
             <br>
-            <h1> Les Jobs </h1>
+            <h1> Les postes </h1>
             <br>
             <table class="table table-hover  table-sm">
                 <thead>

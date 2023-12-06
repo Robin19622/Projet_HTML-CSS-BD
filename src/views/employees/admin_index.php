@@ -2,13 +2,13 @@
     <div class="row">
         <div class="col">
             <br>
-            <h1> Les employees </h1>
+            <h1> Les employés </h1>
             <br>
             <table class="table table-hover  table-sm">
                 <thead>
                     <tr class="bg-danger">
                         <th scope="col">identifiant</th>
-                        <th scope="col">employees</th>
+                        <th scope="col">employé</th>
 
                         <th scope="col"></th>
                         <th scope="col"></th>

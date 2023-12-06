@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col">
             <br>
-            <h1> Les employyes </h1>
+            <h1> Les employés </h1>
             <br>
             <?php
             foreach ($employees as $s) {

@@ -4,7 +4,7 @@
             <h1> <?php
                 if (isset($employee->id)) {
                     echo "modification";
-                } else echo "ajout" ?> employee :</h1>
+                } else echo "ajout" ?> d'un employé :</h1>
         </div>
     </div>
     <div class="row">
@@ -30,9 +30,9 @@
                             echo $_POST['LAST_NAME'];
                         }
                     } ?>" required>
-                    <label for="floatingName">LAST_NAME</label>
+                    <label for="floatingName">nom de famille</label>
                     <div class="invalid-feedback">
-                        Le LAST_NAME est obligatoire
+                        Le nom de famille est obligatoire
                     </div>
                 </div>
                 <div class="form-floating mb-3">
@@ -44,9 +44,9 @@
                             echo $_POST['FIRST_NAME'];
                         }
                     } ?>" required>
-                    <label for="floatingName">FIRST_NAME</label>
+                    <label for="floatingName">prénom</label>
                     <div class="invalid-feedback">
-                        Le FIRST_NAME est obligatoire
+                        Le prénom est obligatoire
                     </div>
                 </div>
                 <div class="form-floating mb-3">
@@ -58,9 +58,9 @@
                             echo $_POST['EMAIL'];
                         }
                     } ?>" required>
-                    <label for="floatingName">EMAIL</label>
+                    <label for="floatingName">email</label>
                     <div class="invalid-feedback">
-                        Le EMAIL est obligatoire
+                        L'email est obligatoire
                     </div>
                 </div>
                 <div class="form-floating mb-3">
@@ -72,9 +72,9 @@
                             echo $_POST['PHONE_NUMBER'];
                         }
                     } ?>" required>
-                    <label for="floatingName">PHONE_NUMBER</label>
+                    <label for="floatingName">numéro de téléphone</label>
                     <div class="invalid-feedback">
-                        Le PHONE_NUMBER est obligatoire
+                        Le numéro de téléphone est obligatoire
                     </div>
                 </div>
                 <div class="form-floating mb-3">
@@ -86,9 +86,9 @@
                             echo $_POST['HIRE_DATE'];
                         }
                     } ?>" required>
-                    <label for="floatingName">HIRE_DATE</label>
+                    <label for="floatingName">date d'embauche</label>
                     <div class="invalid-feedback">
-                        Le HIRE_DATE est obligatoire
+                        La date d'embauche est obligatoire
                     </div>
                 </div>
                 <div class="form-floating mb-3">
@@ -100,9 +100,9 @@
                             echo $_POST['SALARY'];
                         }
                     } ?>" required>
-                    <label for="floatingName">SALARY</label>
+                    <label for="floatingName">salaire</label>
                     <div class="invalid-feedback">
-                        Le SALARY est obligatoire
+                        Le salaire est obligatoire
                     </div>
                 </div>
                 <div class="form-floating mb-3">
@@ -114,9 +114,9 @@
                             echo $_POST['COMMISSION_PCT'];
                         }
                     } ?>" required>
-                    <label for="floatingName">COMMISSION_PCT</label>
+                    <label for="floatingName">commission PCT</label>
                     <div class="invalid-feedback">
-                        Le COMMISSION_PCT est obligatoire
+                        La commission PCT est obligatoire
                     </div>
                 </div>
                 <?php
