@@ -1,7 +1,11 @@
 # Projet_HTML-CSS-BD
 
-![Static Badge](https://img.shields.io/badge/php-8.2.8-red.svg?logo=php&logoColor=fff&style=flat)
+![Static Badge](https://img.shields.io/badge/php-8.3-red.svg?logo=php&logoColor=fff&style=flat)
 ![Static Badge](https://img.shields.io/badge/mysql-latest-blue.svg?logo=mysql&logoColor=fff&style=flat)
+![Static Badge](https://img.shields.io/badge/phpMyAdmin-latest-green.svg?logo=phpMyAdmin&logoColor=fff&style=flat)
+![Static Badge](https://img.shields.io/badge/Bootstrap-5.3.2-blueviolet.svg?style=flat&logo=bootstrap&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Apache-latest-yellow.svg?style=flat&logo=Apache&logoColor=white)
+
 
 ## Introduction
 
@@ -31,20 +35,27 @@ docker compose up --build -d
     | Username      | root    |
     | Password      | example |
 
+
+
 ```
 http://localhost:8080
 ```
 
-4. Crée une base de donnée avec le nom suivant :
+4. Importer le fichier humanRessoure.sql dans la base de donnée nommée humanRessource :
+
+
+5. Voir le site en suivant l'url :
+
 
 ```
-human_ressources
+http://localhost
 ```
-
-5. importer le fichier human_ressources.sql pour avoir la base de donnée
-
-6. Voir le site en suivant l'url :
-
+6. Pour se connecter en tant qu'administrateur, suivez le lien ci-dessous ou cliquez sur le bouton 'Connexion' en haut à droite de la page d'accueil.
 ```
-http://localhost/
+http://localhost/users
 ```
+   | identifiant : |         |
+   |---------------|---------|
+   | login         | prof    |
+   | passeword     | Rawat   |
+
