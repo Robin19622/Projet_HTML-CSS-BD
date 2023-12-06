@@ -8,6 +8,24 @@ class location extends Model
             "order" => ' id',
         ));
     }
+    public function savelocation($data)
+    {
+        return $this->save($data);
+    }
+
+    public function getlocation($id)
+    {
+        return $this->findfirst(array(
+            "condition" => 'id=' . $id
+        ));
+    }
+    public function deletelocation($id)
+    {
+        return $this->delete(array(
+            "condition" => 'id=' . $id,
+
+        ));
+    }
 
     
 

@@ -31,6 +31,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/departments">Départements</a>
           </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/locations"> locations </a>
+            </li>
         </ul>
         <form class='d-flex' method='POST' action='/users'>
           <button class='btn btn-outline-success' type='submit'>Connexion</button>
@@ -40,10 +43,10 @@
   </nav>
 
   <div class="container mt-4">
-    <?php 
+    <?php
       echo $this->Session->flash();
 
-      echo $content_for_layout; 
+      echo $content_for_layout;
     ?>
   </div>
 

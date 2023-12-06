@@ -56,11 +56,7 @@ class controller
             echo "<option value='";
             echo $l->$nomidentiiant;
             echo " ' ";
-            if (isset($listevariable->$name)) {
-                if ($listevariable->$name == $l->$nomidentiiant) {
-                    echo 'selected';
-                }
-            }
+            echo isset($listevariable[$name]) && $listevariable[$name] === $l->$nomidentiiant ? 'selected' : '';
             echo ">";
             if (is_array($nomaderoule)) {
                 foreach ($nomaderoule as $fieldName) {
@@ -74,5 +70,25 @@ class controller
         echo "</select>";
         echo "<label for='floatingSelect'>$floatingName</label>";
         echo "</div>";
+    }
+
+    function generateInputField($object,string $fieldName,string $placeholder,bool $isRequired,string $type): void {
+        $value = '';
+        if (isset($object->$fieldName)) {
+            $value = $object->$fieldName;
+        } else if (isset($_POST[$fieldName])) {
+            $value = $_POST[$fieldName];
+        }
+
+
+        $required = $isRequired ? 'required' : '';
+        $readonly = $fieldName === 'id' ? 'readonly' : '';
+        echo "<input type='$type' class='form-control' id='floating_$fieldName' placeholder='$placeholder' name='$fieldName' value='$value' $required $readonly >";
+        echo "<label for='floating$fieldName'>$placeholder</label>";
+        if ($isRequired) {
+            echo "<div class='invalid-feedback'>";
+            echo "Le $placeholder est obligatoire";
+            echo "</div>";
+        }
     }
 }

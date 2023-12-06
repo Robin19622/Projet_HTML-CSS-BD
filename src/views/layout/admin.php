@@ -31,6 +31,9 @@
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/departements/admin_index">departements</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/locations/admin_index">locations</a>
+            </li>
   </nav>
   <div class=" container ">
     <div class="row">
