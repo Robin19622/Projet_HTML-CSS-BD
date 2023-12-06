@@ -9,34 +9,22 @@
     </div>
     <div class="row">
         <div class="col-6">
+            <?php $departement = $departement ?? new stdClass();?>
             <form class="row g-3 needs-validation" action="/departements/admin_edit/<?php if (isset($departement->id)) echo $departement->id ?>" method="POST" novalidate>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingid" placeholder="id vérouillé" name="id" readonly="readonly" value="<?php
-                    if (isset($departement->id)) {
-                        echo $departement->id;
-                    } else {
-                        if (isset($_POST['id'])) {
-                            echo $_POST['id'];
-                        }
-                    } ?>">
-                    <label for="floatingid">id</label>
+                    <?php echo $this->generateInputField($departement, 'id', 'id', true, 'text'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control " id="floatingName" placeholder="DEPARTMENT_NAME" name="DEPARTMENT_NAME" value="<?php
-                    if (isset($departement->DEPARTMENT_NAME)) {
-                        echo $departement->DEPARTMENT_NAME;
-                    } else {
-                        if (isset($_POST['DEPARTMENT_NAME'])) {
-                            echo $_POST['DEPARTMENT_NAME'];
-                        }
-                    } ?>" required>
-                    <label for="floatingName">nom du département</label>
-                    <div class="invalid-feedback">
-                        Le nom du département est obligatoire
-                    </div>
+                    <?php echo $this->generateInputField($departement, 'DEPARTMENT_NAME', 'nom du département', true, 'text'); ?>
                 </div>
-                <?php echo $this->liste($managers, "MANAGER_ID", "Manager", "id", ["FIRST_NAME","LAST_NAME"]);?>
-                <?php echo $this->liste($locations, "LOCATION_ID", "Locations", "id", ["STREET_ADDRESS","CITY","STATE_PROVINCE"]);?>
+                <?php
+                $listederoulante = [];
+                if (isset($departement)) {
+                    $listederoulante = get_object_vars($departement);
+                }
+                ?>
+                <?php echo $this->liste($managers, "MANAGER_ID", "Manager", "id", ["FIRST_NAME","LAST_NAME"],$listederoulante);?>
+                <?php echo $this->liste($locations, "LOCATION_ID", "Locations", "id", ["STREET_ADDRESS","CITY","STATE_PROVINCE"],$listederoulante);?>
                 <button type="submit" class="btn btn-outline-secondary">Valider</button>
             </form>
         </div>

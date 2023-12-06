@@ -2,27 +2,37 @@
     <div class="row">
         <div class="col-12">
             <h1> <?php
-                if (isset($job->id)) {
+                if (isset($location->id)) {
                     echo "Modification";
-                } else echo "Ajout" ?> d'un poste :</h1>
+                } else echo "Ajout" ?> d'un location :</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-6">
-            <?php $job = $job ?? new stdClass();?>
-            <form class="row g-3 needs-validation" action="/jobs/admin_edit/<?php if (isset($job->id)) echo $job->id ?>" method="POST" novalidate>
+            <?php $location = $location ?? new stdClass();?>
+            <form class="row g-3 needs-validation" action="/locations/admin_edit/<?php if (isset($location->id)) echo $location->id ?>" method="POST" novalidate>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($job, 'id', 'id', true, 'text'); ?>
+                    <?php echo $this->generateInputField($location, 'id', 'id', true, 'text'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($job, 'JOB_TITLE', 'titre du poste', true, 'text'); ?>
+                    <?php echo $this->generateInputField($location, 'STREET_ADDRESS', 'STREET_ADDRESS', true, 'text'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($job, 'MIN_SALARY', 'salaire minimum', true, 'number'); ?>
+                    <?php echo $this->generateInputField($location, 'POSTAL_CODE', 'POSTAL_CODE', true, 'text'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($job, 'MAX_SALARY', 'salaire maximum', true, 'number'); ?>
+                    <?php echo $this->generateInputField($location, 'CITY', 'CITY', true, 'text'); ?>
                 </div>
+                <div class="form-floating mb-3">
+                    <?php echo $this->generateInputField($location, 'STATE_PROVINCE', 'STATE_PROVINCE', true, 'text'); ?>
+                </div>
+                <?php
+                $listederoulante = [];
+                if (isset($location)) {
+                    $listederoulante = get_object_vars($location);
+                }
+                echo $this->liste($countries, "COUNTRY_ID", "Countries", "id", ["COUNTRIES_NAMES"], $listederoulante);
+                ?>
                 <button type="submit" class="btn btn-outline-secondary">Valider</button>
             </form>
         </div>

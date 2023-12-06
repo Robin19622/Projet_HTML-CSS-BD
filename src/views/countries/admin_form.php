@@ -9,47 +9,25 @@
     </div>
     <div class="row">
         <div class="col-6">
+            <?php $countrie = $countrie ?? new stdClass();?>
             <form class="row g-3 needs-validation" action="/countries/admin_edit/<?php if (isset($countrie->id)) echo $countrie->id ?>" method="POST" novalidate>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingid" placeholder="id vérouillé" name="id" readonly="readonly" value="<?php
-                    if (isset($countrie->id)) {
-                        echo $countrie->id;
-                    } else {
-                        if (isset($_POST['id'])) {
-                            echo $_POST['id'];
-                        }
-                    } ?>">
-                    <label for="floatingid">id</label>
+                    <?php echo $this->generateInputField($countrie, 'id', 'id', true, 'text'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control " id="floatingName" placeholder="COUNTRIES_NAMES" name="COUNTRIES_NAMES" value="<?php
-                    if (isset($countrie->COUNTRIES_NAMES)) {
-                        echo $countrie->COUNTRIES_NAMES;
-                    } else {
-                        if (isset($_POST['COUNTRIES_NAMES'])) {
-                            echo $_POST['COUNTRIES_NAMES'];
-                        }
-                    } ?>" required>
-                    <label for="floatingName">nom du pays </label>
-                    <div class="invalid-feedback">
-                        Le nom du pays est obligatoire
-                    </div>
+                    <?php echo $this->generateInputField($countrie, 'COUNTRIES_NAMES', 'nom du pays', true, 'text'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control " id="floatingName" placeholder="SHORT_NAMES" name="SHORT_NAMES" value="<?php
-                    if (isset($countrie->SHORT_NAMES)) {
-                        echo $countrie->SHORT_NAMES;
-                    } else {
-                        if (isset($_POST['SHORT_NAMES'])) {
-                            echo $_POST['SHORT_NAMES'];
-                        }
-                    } ?>" required maxlength="2" >
-                    <label for="floatingName">nom raccourci </label>
-                    <div class="invalid-feedback">
-                        Le nom raccourci est obligatoire
-                    </div>
+                    <?php echo $this->generateInputField($countrie, 'SHORT_NAMES', 'nom raccourci', true, 'text'); ?>
                 </div>
-                <?php echo $this->liste($regions, "REGION_ID", "Regions", "id", ["REGIONS_NAMES"]);?>
+                <?php
+
+                $listederoulante = [];
+                if (isset($countrie)) {
+                    $listederoulante = get_object_vars($countrie);
+                }
+                ?>
+                <?php echo $this->liste($regions, "REGION_ID", "Regions", "id", ["REGIONS_NAMES"],$listederoulante);?>
 
                 <button type="submit" class="btn btn-outline-secondary">Valider</button>
             </form>

@@ -2,27 +2,32 @@
     <div class="row">
         <div class="col-12">
             <h1> <?php
-                if (isset($job->id)) {
+                if (isset($jobhistory->id)) {
                     echo "Modification";
-                } else echo "Ajout" ?> d'un poste :</h1>
+                } else echo "Ajout" ?> d'un jobhistory :</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-6">
-            <?php $job = $job ?? new stdClass();?>
-            <form class="row g-3 needs-validation" action="/jobs/admin_edit/<?php if (isset($job->id)) echo $job->id ?>" method="POST" novalidate>
+            <?php $jobhistory = $jobhistory ?? new stdClass();?>
+            <form class="row g-3 needs-validation" action="/jobhistorys/admin_edit/<?php if (isset($jobhistory->id)) echo $jobhistory->id ?>" method="POST" novalidate>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($job, 'id', 'id', true, 'text'); ?>
+                    <?php echo $this->generateInputField($jobhistory, 'id', 'id', true, 'text'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($job, 'JOB_TITLE', 'titre du poste', true, 'text'); ?>
+                    <?php echo $this->generateInputField($jobhistory, 'START_DATE', 'Date de début', true, 'date'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($job, 'MIN_SALARY', 'salaire minimum', true, 'number'); ?>
+                    <?php echo $this->generateInputField($jobhistory, 'END_DATE', 'Date de fin', true, 'date'); ?>
                 </div>
-                <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($job, 'MAX_SALARY', 'salaire maximum', true, 'number'); ?>
-                </div>
+                <?php
+                $listederoulante = [];
+                if (isset($jobhistory)) {
+                    $listederoulante = get_object_vars($jobhistory);
+                }
+                echo $this->liste($jobs, "JOB_ID", "Les jobs", "id", ["JOB_TITLE"], $listederoulante);
+                echo $this->liste($departements, "DEPARTMENT_ID", "Les jobs", "id", ["DEPARTMENT_NAME"], $listederoulante);
+                ?>
                 <button type="submit" class="btn btn-outline-secondary">Valider</button>
             </form>
         </div>
