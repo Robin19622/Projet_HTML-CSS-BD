@@ -3,7 +3,7 @@ class home extends controller
 {
 
 
-    function index()
+    public function index()
     {
 
         $this->render('index');

@@ -2,14 +2,14 @@
 class users extends controller
 {
     var $user;
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
         $this->loadModel('user'); // Charger le modèle 'employee'
         $this->user = $this->models['user'];
     }
 
-    function index()
+    public function index()
     {
         $d = [];
         if (!empty($_POST)) {
@@ -33,7 +33,7 @@ class users extends controller
             $this->render('index');
         }
     }
-    function logout()
+    public function logout()
     {
         unset($_SESSION['User']);
         $this->layout = 'default';

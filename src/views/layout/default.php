@@ -20,10 +20,18 @@
 
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
-          <li class="nav-item">
-            <a class="nav-link" href="/employees"> employees </a>
-          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/employees"> employees </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/jobs"> jobs </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/countries"> countries </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/departements"> departements </a>
+            </li>
         </ul>
 
         <form class='d-flex' method='POST' action='/users'>
