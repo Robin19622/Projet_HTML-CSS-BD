@@ -4,7 +4,7 @@
             <h1> <?php
                 if (isset($employee->id)) {
                     echo "modification";
-                } else echo "ajout" ?> d'un employé :</h1>
+                } else echo "Ajout" ?> d'un employé :</h1>
         </div>
     </div>
     <div class="row">
@@ -12,28 +12,28 @@
             <?php $employee = $employee ?? new stdClass();?>
             <form class="row g-3 needs-validation" action="/employees/admin_edit/<?php if (isset($employee->id)) echo $employee->id ?>" method="POST" novalidate>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($employee, 'id', 'id', true, 'text'); ?>
+                    <?php echo $this->generateInputField($employee, 'id', 'Identifiant', true, 'text'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($employee, 'LAST_NAME', 'nom de famille', true, 'text'); ?>
+                    <?php echo $this->generateInputField($employee, 'LAST_NAME', 'Nom de famille', true, 'text'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($employee, 'FIRST_NAME', 'prénom', true, 'text'); ?>
+                    <?php echo $this->generateInputField($employee, 'FIRST_NAME', 'Prénom', true, 'text'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($employee, 'EMAIL', 'email', true, 'email'); ?>
+                    <?php echo $this->generateInputField($employee, 'EMAIL', 'Email', true, 'email'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($employee, 'PHONE_NUMBER', 'numéro de téléphone', true, 'text'); ?>
+                    <?php echo $this->generateInputField($employee, 'PHONE_NUMBER', 'Numéro de téléphone', true, 'text'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($employee, 'HIRE_DATE', "date d'embauche", true, 'date'); ?>
+                    <?php echo $this->generateInputField($employee, 'HIRE_DATE', "Date d'embauche", true, 'date'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($employee, 'SALARY', "salaire", true, 'number'); ?>
+                    <?php echo $this->generateInputField($employee, 'SALARY', "Salaire", true, 'number'); ?>
                 </div>
                 <div class="form-floating mb-3">
-                    <?php echo $this->generateInputField($employee, 'COMMISSION_PCT', "commission PCT", true, 'number'); ?>
+                    <?php echo $this->generateInputField($employee, 'COMMISSION_PCT', "Commission PCT", true, 'number'); ?>
                 </div>
                 <?php
                 $listederoulante = [];
