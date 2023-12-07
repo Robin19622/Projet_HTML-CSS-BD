@@ -8,18 +8,18 @@ class location extends Model
             "order" => ' id',
         ));
     }
-    public function savelocation($data)
+    public function savelocation(array $data): bool
     {
         return $this->save($data);
     }
 
-    public function getlocation($id)
+    public function getlocation(int $id): object
     {
         return $this->findfirst(array(
             "condition" => 'id=' . $id
         ));
     }
-    public function deletelocation($id)
+    public function deletelocation(int $id): bool
     {
         return $this->delete(array(
             "condition" => 'id=' . $id,

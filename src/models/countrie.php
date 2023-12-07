@@ -9,25 +9,25 @@ class countrie extends Model
         ));
     }
 
-    public function savecountrie($data)
+    public function savecountrie( array $data): bool
     {
         return $this->save($data);
     }
 
-    public function getcountrie($id)
+    public function getcountrie( int $id): object
     {
         return $this->findfirst(array(
             "condition" => 'id=' . $id
         ));
     }
-    public function deletecountrie($id)
+    public function deletecountrie( int $id): bool
     {
         return $this->delete(array(
             "condition" => 'id=' . $id,
 
         ));
     }
-    public function countAllEmployees()
+    public function countAllEmployees(): array
     {
         return $this->find(array(
             "fields" => 'COUNT(*) as total_employees',

@@ -50,7 +50,7 @@ class controller
      *
      * @param string $name Le nom du modèle à charger.
      */
-    function loadModel($name): void
+    function loadModel(string $name): void
     {
         require(ROOT."models/".strtolower($name).".php");
         $this->models[$name] = new $name();
@@ -61,7 +61,7 @@ class controller
      *
      * @param string $filename Le nom du fichier de vue à rendre.
      */
-    function render($filename): void
+    function render( string $filename): void
     {
         extract($this->vars);
         ob_start();
@@ -79,7 +79,7 @@ class controller
      *
      * @param array $d Un tableau associatif de variables à définir pour la vue.
      */
-    function set($d): void
+    function set( array $d): void
     {
         $this->vars = array_merge($this->vars, $d);
     }
@@ -135,7 +135,7 @@ class controller
      * @param bool $isRequired Si le champ est requis.
      * @param string $type Le type du champ d'entrée.
      */
-    function generateInputField($object,string $fieldName,string $placeholder,bool $isRequired,string $type): void {
+    function generateInputField(object $object,string $fieldName,string $placeholder,bool $isRequired,string $type): void {
         $value = '';
         if (isset($object->$fieldName)) {
             $value = $object->$fieldName;

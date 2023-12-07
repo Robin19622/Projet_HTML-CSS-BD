@@ -37,6 +37,10 @@
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/jobhistorys/admin_index">job historys</a>
             </li>
+        </ul>
+          <form class='d-flex' method='POST' action='/users/logout'>
+              <button class='btn btn-outline-success' type='submit'>Se deconnecter</button>
+          </form>
   </nav>
   <div class=" container ">
     <div class="row">
