@@ -8,18 +8,18 @@ class jobhistory extends Model
             "order" => ' id',
         ));
     }
-    public function savejobhistory($data)
+    public function savejobhistory(array $data): bool
     {
         return $this->save($data);
     }
 
-    public function getjobhistory($id)
+    public function getjobhistory(int $id): object
     {
         return $this->findfirst(array(
             "condition" => 'id=' . $id
         ));
     }
-    public function deletejobhistory($id)
+    public function deletejobhistory(int $id): bool
     {
         return $this->delete(array(
             "condition" => 'id=' . $id,

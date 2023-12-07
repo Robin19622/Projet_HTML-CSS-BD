@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col">
             <br>
-            <h1> Les locations </h1>
+            <h1> Les localisations </h1>
             <br>
             <?php
             foreach ($locations as $l) {

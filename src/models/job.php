@@ -9,18 +9,18 @@ class job extends Model
         ));
     }
 
-    public function saveJob($data)
+    public function saveJob( array $data): bool
     {
         return $this->save($data);
     }
 
-    public function getJob($id)
+    public function getJob( int $id): object
     {
         return $this->findfirst(array(
             "condition" => 'id=' . $id
         ));
     }
-    public function deleteJob($id)
+    public function deleteJob( int $id): bool
     {
         return $this->delete(array(
             "condition" => 'id=' . $id,

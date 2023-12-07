@@ -2,31 +2,32 @@
 class employee extends Model
 {
     var $table = "employees";
-    function getLast(int $num = 10 )
+    public  function getLast(int $num = 10 ): array
     {
         return $this->find(array(
             "limit" => 'LIMIT ' . $num,
         ));
     }
-    function getEmployee($id)
+    public function getEmployee(int $id): object
     {
         return $this->findfirst(array(
             "condition" => 'id=' . $id
         ));
     }
-    function deleteEmployee($id)
+    public function deleteEmployee(int $id): bool
     {
+        
         return $this->delete(array(
             "condition" => 'id=' . $id,
 
         ));
     }
-    function saveEmployee($data)
+    public function saveEmployee( array $data): bool
     {
         return $this->save($data);
     }
 
-    function getAllManagers(): false|array|null
+    public function getAllManagers(): false|array|null
     {
         return $this->find(array(
             "order" => ' id',

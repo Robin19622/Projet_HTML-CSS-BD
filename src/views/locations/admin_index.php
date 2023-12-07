@@ -28,7 +28,7 @@
                         <td><a class="nav-link text-dark" ><?= $l->STREET_ADDRESS ?></a></td>
                         <td><a class="nav-link text-dark" ><?= $l->CITY ?></a></td>
                         <td><a href="/locations/admin_edit/<?= $l->id ?>"><i class="fas fa-edit"></i></a></td>
-                        <td><a href="/locations/admin_delete/<?= $l->id ?>" onclick="return confirm('Voulez-vous vraiment supprimer cette location?');"><i class="far fa-trash-alt"></i></a></td>
+                        <td><a href="/locations/admin_delete/<?= $l->id ?>" onclick="return confirm('Voulez-vous vraiment supprimer cette localisation?');"><i class="far fa-trash-alt"></i></a></td>
                     </tr>
                 <?php } ?>
                 <tr>
