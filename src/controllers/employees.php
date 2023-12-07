@@ -102,4 +102,24 @@ class employees extends controller
             $this->render('index');
         }
     }
+
+    public function info_form(int $id): void
+    {
+        if ($this->Session->isLogged()) {
+            $d = [];
+            $d['employee'] = $this->employee->getEmployee($id);
+            $d['job'] = $this->job->getJob($d['employee']->JOB_ID);
+            $d['department'] = $this->department->getdepartement($d['employee']->DEPARTMENT_ID);
+            $this->set($d);
+            $this->layout = 'admin';
+            $this->render('info_form');
+        } else {
+            $this->Session->setFlash("Appli impiratable " . $_SERVER['REMOTE_ADDR'], '<i class="fas fa-times"></i>', "danger");
+            $d = [];
+            $d['employees'] = $this->employee->getLast(999);
+            $this->set($d);
+            $this->layout = 'default';
+            $this->render('index');
+        }
+    }
 }
