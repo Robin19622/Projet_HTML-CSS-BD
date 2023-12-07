@@ -33,10 +33,9 @@ class employee extends Model
         ));
     }
 
-    function countAllEmployees() {
+    public function getTotalEmployees(): array {
         return $this->find(array(
-            "fields" => 'COUNT(*) as total_employees',
-            "limit" => ''
+            "fields" => 'COUNT(*) as nb_employees',
         ));
     }    
 }

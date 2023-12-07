@@ -29,13 +29,13 @@
             <a class="nav-link" href="/countries">Pays</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/departments">Départements</a>
+            <a class="nav-link" href="/departements">Départements</a>
           </li>
             <li class="nav-item">
-                <a class="nav-link" href="/locations"> locations </a>
+                <a class="nav-link" href="/locations">Locations </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/jobhistorys"> Les historiques des postes </a>
+                <a class="nav-link" href="/jobhistorys">Historiques des postes </a>
             </li>
         </ul>
         <form class='d-flex' method='POST' action='/users'>

@@ -89,6 +89,7 @@ class Model
         $fields = "*";
         $inner = " ";
         $union = " ";
+        $group = " ";
         $condition = "1=1";
         $order = "id";
         $limit = " ";
@@ -110,15 +111,20 @@ class Model
         if (isset($data['limit'])) {
             $limit = $data['limit'];
         }
+        if (isset($data['group'])) {
+            $group = $data['group'];
+        }
         $sql = 'SELECT ' . $fields .
             ' FROM ' . $this->table .
             '  ' . $inner .
             ' Where ' . $condition .
             ' ' . $union .
+            ' ' . $group .
             ' Order BY ' . $order .
             ' ' . $limit;
 
         $stmt = $this->db->prepare($sql);
+        echo($sql);
         if ($stmt->execute()) {
             $data = $stmt->fetchall(PDO::FETCH_OBJ);
             return $data;

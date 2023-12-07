@@ -101,5 +101,5 @@ class employees extends controller
             $this->layout = 'default';
             $this->render('index');
         }
-    }
+    } 
 }

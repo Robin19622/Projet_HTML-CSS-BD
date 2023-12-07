@@ -23,6 +23,7 @@ class departements extends controller
     {
         $d = [];
         $d['departements'] = $this->departement->getAllDepartment();
+        
         $this->set($d);
         $this->render('index');
     }
@@ -102,6 +103,7 @@ class departements extends controller
             $this->render('index');
         }
     }
+    
 
 
 }
