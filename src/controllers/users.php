@@ -5,7 +5,7 @@ class users extends controller
     public function __construct()
     {
         parent::__construct();
-        $this->loadModel('user'); // Charger le modèle 'employee'
+        $this->loadModel('user');
         $this->user = $this->models['user'];
     }
 

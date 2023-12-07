@@ -36,6 +36,9 @@ class employees extends controller
             $this->render('admin_index');
         } else {
             $this->Session->setFlash("Appli impiratable ".$_SERVER['REMOTE_ADDR'], '<i class="fas fa-times"></i>', "danger");
+            $d = [];
+            $d['employees'] = $this->employee->getLast(999);
+            $this->set($d);
             $this->layout = 'default';
             $this->render('index');
         }
@@ -69,6 +72,9 @@ class employees extends controller
             }
         } else {
             $this->Session->setFlash("Appli impiratable ".$_SERVER['REMOTE_ADDR'], '<i class="fas fa-times"></i>', "danger");
+            $d = [];
+            $d['employees'] = $this->employee->getLast(999);
+            $this->set($d);
             $this->layout = 'default';
             $this->render('index');
         }
@@ -89,6 +95,9 @@ class employees extends controller
             $this->render('admin_index');
         } else {
             $this->Session->setFlash("Appli impiratable ".$_SERVER['REMOTE_ADDR'], '<i class="fas fa-times"></i>', "danger");
+            $d = [];
+            $d['employees'] = $this->employee->getLast(999);
+            $this->set($d);
             $this->layout = 'default';
             $this->render('index');
         }

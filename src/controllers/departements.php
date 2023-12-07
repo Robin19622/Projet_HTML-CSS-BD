@@ -37,6 +37,9 @@ class departements extends controller
             $this->render('admin_index');
         } else {
             $this->Session->setFlash("Appli impiratable ".$_SERVER['REMOTE_ADDR'], '<i class="fas fa-times"></i>', "danger");
+            $d = [];
+            $d['departements'] = $this->departement->getAllDepartment();
+            $this->set($d);
             $this->layout = 'default';
             $this->render('index');
         }
@@ -69,6 +72,9 @@ class departements extends controller
             }
         } else {
             $this->Session->setFlash("Appli impiratable ".$_SERVER['REMOTE_ADDR'], '<i class="fas fa-times"></i>', "danger");
+            $d = [];
+            $d['departements'] = $this->departement->getAllDepartment();
+            $this->set($d);
             $this->layout = 'default';
             $this->render('index');
         }
@@ -89,6 +95,9 @@ class departements extends controller
             $this->render('admin_index');
         } else {
             $this->Session->setFlash("Appli impiratable ".$_SERVER['REMOTE_ADDR'], '<i class="fas fa-times"></i>', "danger");
+            $d = [];
+            $d['departements'] = $this->departement->getAllDepartment();
+            $this->set($d);
             $this->layout = 'default';
             $this->render('index');
         }

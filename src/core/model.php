@@ -1,19 +1,43 @@
 <?php
+
+/**
+ * Classe Model
+ *
+ * Cette classe est le modèle de base pour l'application. Elle fournit des méthodes pour lire, trouver, supprimer et sauvegarder des données dans la base de données.
+ */
 class Model
 {
+    /**
+     * @var mixed $id
+     * L'identifiant de l'objet.
+     */
     public $id;
-    public $table;
-    public $conf = "default";
-    public $db;
-    // read : un select sur clé primaire 
 
+    /**
+     * @var string $table
+     * Le nom de la table dans la base de données.
+     */
+    public $table;
+
+    /**
+     * @var string $conf
+     * Le nom de la configuration de la base de données à utiliser.
+     */
+    public $conf = "default";
+
+    /**
+     * @var PDO $db
+     * L'objet PDO pour la connexion à la base de données.
+     */
+    public $db;
+
+    /**
+     * Le constructeur de la classe. Il initialise la connexion à la base de données.
+     */
     function __construct()
     {
         $conf = conf::$databases[$this->conf];
-        // on fait appel a notre configuration par defaut 
         try {
-            //new PDO instancie un objet en $dbh
-            //ce constructeur attend 3 paramètres : serveur/bdd, user , mot de passe
             $this->db = new PDO(
                 'mysql:host=' . $conf['host'] . ';dbname=' . $conf['database'],
                 $conf['public'],
@@ -28,12 +52,17 @@ class Model
             die();
         }
     }
+
+    /**
+     * Lit une entrée de la base de données en fonction de l'identifiant de l'objet.
+     *
+     * @param string|null $fields Les champs à lire. Si null, tous les champs sont lus.
+     */
     function read($fields = null)
     {
         if ($fields == null) {
             $fields = "*";
         }
-        /* Exécute une requete préparée en passant un tableau de valeur*/
         $sql = 'SELECT ' . $fields . ' FROM ' . $this->table . ' WHERE id= :id';
 
         $sth = $this->db->prepare($sql);
@@ -44,14 +73,19 @@ class Model
             foreach ($data as $key => $value) {
                 $this->$key = $value;
             }
-            // return $data;
         } else {
             echo "<br/> erreur SQL";
         }
     }
+
+    /**
+     * Trouve des entrées dans la base de données en fonction des critères spécifiés.
+     *
+     * @param array $data Les critères de recherche.
+     * @return array Les entrées trouvées.
+     */
     function find($data)
     {
-
         $fields = "*";
         $inner = " ";
         $union = " ";
@@ -76,7 +110,6 @@ class Model
         if (isset($data['limit'])) {
             $limit = $data['limit'];
         }
-        /* Exécute une requete préparée en passant un tableau de valeur*/
         $sql = 'SELECT ' . $fields .
             ' FROM ' . $this->table .
             '  ' . $inner .
@@ -86,7 +119,6 @@ class Model
             ' ' . $limit;
 
         $stmt = $this->db->prepare($sql);
-        echo $sql;
         if ($stmt->execute()) {
             $data = $stmt->fetchall(PDO::FETCH_OBJ);
             return $data;
@@ -94,10 +126,24 @@ class Model
             echo "<br/> erreur SQL";
         }
     }
+
+    /**
+     * Trouve la première entrée dans la base de données qui correspond aux critères spécifiés.
+     *
+     * @param array $data Les critères de recherche.
+     * @return object La première entrée trouvée.
+     */
     function findFirst($data)
     {
         return current($this->find($data));
     }
+
+    /**
+     * Supprime des entrées de la base de données en fonction des critères spécifiés.
+     *
+     * @param array $data Les critères de suppression.
+     * @return bool True si la suppression a réussi, false sinon.
+     */
     function delete($data)
     {
         $condition = "1=1";
@@ -114,6 +160,12 @@ class Model
         }
     }
 
+    /**
+     * Sauvegarde une entrée dans la base de données. Si l'identifiant de l'objet est défini, l'entrée existante est mise à jour. Sinon, une nouvelle entrée est créée.
+     *
+     * @param array $data Les données à sauvegarder.
+     * @return bool True si la sauvegarde a réussi, false sinon.
+     */
     function save($data)
     {
         foreach ($data as $key => $value) {
@@ -144,7 +196,6 @@ class Model
         } else {
             $this->id = $data['id'];
             unset($data['id']);
-            //UPDATE `categorie` SET `name` = 'uhzw', `ordre` = '4' WHERE `categorie`.`id` = 8;
             $sql = 'Update ' . $this->table . ' Set  ';
 
             foreach ($data as $key => $value) {
