@@ -47,7 +47,9 @@
 
   <div class="container mt-4">
     <?php
-      echo $this->Session->flash();
+    if (isset($this) && property_exists($this, 'Session')) {
+        echo $this->Session->flash();
+    }
 
       echo $content_for_layout;
     ?>

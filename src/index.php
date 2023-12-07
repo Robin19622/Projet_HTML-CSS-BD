@@ -34,20 +34,19 @@ if (empty($chemin[2])) {
 
 //echo "action :" . $action . "<br>";
 
-require(ROOT . 'controllers/' . $controller . '.php');
-$controller = new $controller();
+$controller_file = ROOT . 'controllers/' . $controller . '.php';
+if (file_exists($controller_file)) {
+    require($controller_file);
+    $controller = new $controller();
 
-//verification de l'existance de l'action demande 
-if (method_exists($controller, $action)) {
-    //$controller->$action();
-    unset($chemin[0]);
-    unset($chemin[1]);
-    unset($chemin[2]);
-
-
-    // 1 paramètre : tableau( objets, méthode)
-    // 2 paramètre : un tableau contenant de 0 a N parametre 
-    call_user_func_array(array($controller, $action), $chemin);
+    if (method_exists($controller, $action)) {
+        unset($chemin[0]);
+        unset($chemin[1]);
+        unset($chemin[2]);
+        call_user_func_array(array($controller, $action), $chemin);
+    } else {
+        require(ROOT . 'views/errors/404.php');
+    }
 } else {
-    echo "erreur 404";
+    require(ROOT . 'views/errors/404.php');
 }
