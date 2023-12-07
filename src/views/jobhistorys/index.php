@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col">
             <br>
-            <h1> Les jobhistorys </h1>
+            <h1>Historique des postes</h1>
             <br>
             <?php
             foreach ($jobhistorys as $j) {

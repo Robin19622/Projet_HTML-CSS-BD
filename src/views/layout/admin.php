@@ -20,22 +20,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/employees/admin_index">employees</a>
+            <a class="nav-link active" aria-current="page" href="/employees/admin_index">Employés</a>
           </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/jobs/admin_index">jobs</a>
+                <a class="nav-link active" aria-current="page" href="/jobs/admin_index">Postes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/countries/admin_index">countries</a>
+                <a class="nav-link active" aria-current="page" href="/countries/admin_index">Pays</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/departements/admin_index">departements</a>
+                <a class="nav-link active" aria-current="page" href="/departements/admin_index">Départements</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/locations/admin_index">locations</a>
+                <a class="nav-link active" aria-current="page" href="/locations/admin_index">Locations</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/jobhistorys/admin_index">job historys</a>
+                <a class="nav-link active" aria-current="page" href="/jobhistorys/admin_index">Historique des postes</a>
             </li>
         </ul>
           <form class='d-flex' method='POST' action='/users/logout'>
