@@ -26,7 +26,10 @@ class location extends Model
 
         ));
     }
-
-    
-
+    public function countAllLocations(): array {
+        return $this->find(array(
+            "fields" => 'COUNT(*) as total_locations',
+            "limit" => ''
+        ));
+    }
 }

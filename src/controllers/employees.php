@@ -4,7 +4,6 @@ class employees extends controller
 {
     var $employee;
     var $department;
-
     var $job;
 
     public function __construct()

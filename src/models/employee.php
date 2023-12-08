@@ -38,5 +38,13 @@ class employee extends Model
         return $this->find(array(
             "fields" => 'COUNT(*) as nb_employees',
         ));
-    }    
+    }
+    
+    public function getHiresByDate() {
+        return $this->find(array(
+            "fields" => 'YEAR(hire_date) as hireDate, COUNT(*) as count',
+            "group" => 'group by YEAR(hire_date)',
+            "order" => 'YEAR(hire_date) ASC'
+        ));
+    }
 }
