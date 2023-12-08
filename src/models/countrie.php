@@ -27,10 +27,9 @@ class countrie extends Model
 
         ));
     }
-    public function countAllEmployees(): array
-    {
+    public function countAllCountries(): array {
         return $this->find(array(
-            "fields" => 'COUNT(*) as total_employees',
+            "fields" => 'COUNT(*) as total_countries',
             "limit" => ''
         ));
     }

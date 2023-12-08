@@ -26,16 +26,26 @@
         </div>
 
         <div class="col-md-4">
-            <div class="card text-white bg-success mb-3">
-                <div class="card-header">Départements</div>
+            <div class="card text-white bg-info mb-3">
+                <div class="card-header">Pays</div>
                 <div class="card-body">
-                    <h5 class="card-title">Nombre total de départements</h5>
-                    <p class="card-text">[Number of departments]</p>
+                    <h5 class="card-title">Nombre total de pays</h5>
+                    <p class="card-text"><?php echo $count_countries[0]->total_countries; ?></p>
                 </div>
             </div>
         </div>
 
-        <!-- Other existing HTML content -->
+        <div class="col-md-4">
+            <div class="card text-white bg-secondary mb-3">
+                <div class="card-header">Localisations</div>
+                <div class="card-body">
+                    <h5 class="card-title">Nombre total de localisations</h5>
+                    <p class="card-text"><?php echo $count_locations[0]->total_locations; ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container mt-4">
     <div class="row">
@@ -66,5 +76,3 @@
         </div>
     </div>
 </div>
-
-

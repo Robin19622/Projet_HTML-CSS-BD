@@ -32,8 +32,8 @@ class departement extends Model
         return $this->find(array(
             'fields' => 'departments.DEPARTMENT_NAME, COUNT(employees.id) as employee_count',
             'inner' => 'inner join employees ON departments.id = employees.department_id',
-            'group' => ' group by departments.id',
-            'order' => '  departments.id'
+            'group' => 'group by departments.id',
+            'order' => 'COUNT(employees.id) DESC'
         ));
     }
 }
