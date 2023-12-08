@@ -32,7 +32,7 @@
             <a class="nav-link" href="/departements">Départements</a>
           </li>
             <li class="nav-item">
-                <a class="nav-link" href="/locations">Locations </a>
+                <a class="nav-link" href="/locations">Localisations</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/jobhistorys">Historiques des postes </a>

@@ -57,5 +57,5 @@ http://localhost/users
    | identifiant : |         |
    |---------------|---------|
    | login         | prof    |
-   | passeword     | Rawat   |
+   | password      | Rawat   |
 
