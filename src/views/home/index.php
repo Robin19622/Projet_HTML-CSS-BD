@@ -37,7 +37,7 @@
 
         <div class="col-md-4">
             <div class="card text-white bg-secondary mb-3">
-                <div class="card-header">Locations</div>
+                <div class="card-header">Localisations</div>
                 <div class="card-body">
                     <h5 class="card-title">Nombre total de localisations</h5>
                     <p class="card-text"><?php echo $count_locations[0]->total_locations; ?></p>
