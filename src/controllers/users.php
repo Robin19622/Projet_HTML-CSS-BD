@@ -7,7 +7,6 @@ class users extends controller
     var $countrie;
     var $job;
     var $location;
-
     var mixed $user;
     public function __construct()
     {
