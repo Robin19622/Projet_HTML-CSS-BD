@@ -27,6 +27,13 @@ class employee extends Model
         return $this->save($data);
     }
 
+    public function getManager(int $manager_id): object
+    {
+        return $this->findfirst(array(
+            "condition" => 'id=' . $manager_id
+        ));
+    }
+
     public function getAllManagers(): false|array|null
     {
         return $this->find(array(

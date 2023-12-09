@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col">
             <br>
-            <h1> Connexion Back office </h1>
+            <h1> Connexion </h1>
             <br>
         </div>
     </div>
