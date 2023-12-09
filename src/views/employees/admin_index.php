@@ -16,6 +16,7 @@
                     <th scope="col" class="sortable">Identifiant <i class="fas fa-sort"></i></th>
                     <th scope="col" class="sortable">Nom <i class="fas fa-sort"></i></th>
                     <th scope="col" class="sortable">Prénom <i class="fas fa-sort"></i></th>
+                    <th scope="col" class="sortable">Salaire <i class="fas fa-sort"></i></th>
                     <th scope="col" style="width: 150px;">Modifier</th>
                     <th scope="col" style="width: 150px;">Supprimer</th>
                     <th scope="col" style="width: 150px;">Information</th>
@@ -27,6 +28,7 @@
                         <td><?= $e->id ?></td>
                         <td><a class="nav-link text-dark" href="/employees/info_form/<?= $e->id ?>"><?= $e->LAST_NAME ?></a></td>
                         <td><a class="nav-link text-dark" href="/employees/info_form/<?= $e->id ?>"><?= $e->FIRST_NAME ?></a></td>
+                        <td><a class="nav-link text-dark" href="/employees/info_form/<?= $e->id ?>"><?= $e->SALARY ?></a></td>
                         <td><a href="/employees/admin_edit/<?= $e->id ?>"><i class="fas fa-edit"></i></a></td>
                         <td><a href="/employees/admin_delete/<?= $e->id ?>" onclick="return confirm('Voulez-vous vraiment supprimer cet employé?');"><i class="far fa-trash-alt"></i></a></td>
                         <!-- Ajoutez la colonne avec le bouton d'information -->
@@ -67,8 +69,8 @@
             rows.forEach((row) => {
                 const idText = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
                 const lastNameText = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
-
-                const searchMatch = idText.includes(searchText) || lastNameText.includes(searchText);
+                const firstNameText = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+                const searchMatch = idText.includes(searchText) || lastNameText.includes(searchText) || firstNameText.includes(searchText);
 
                 if (searchMatch) {
                     row.style.display = '';
