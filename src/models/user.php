@@ -2,7 +2,7 @@
 //categorie   herite de la classe model
 class user extends Model
 {
-    var $table = "users";
+    var string $table = "users";
 
     function getUser(string $login, string  $password): object
     {

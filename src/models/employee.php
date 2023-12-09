@@ -1,7 +1,7 @@
 <?php
 class employee extends Model
 {
-    var $table = "employees";
+    var string $table = "employees";
     public  function getLast(int $num = 10 ): array
     {
         return $this->find(array(

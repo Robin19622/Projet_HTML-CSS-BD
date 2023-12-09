@@ -10,7 +10,7 @@ class conf
      * @var string $tags
      * Une chaîne contenant les balises HTML autorisées dans l'application.
      */
-    public static $tags = "<br><p><i><u><h1><h2><h3><h4><h5><h6><strong><small><b><table><td><th><tr><a><ul><li><ol><tbody><figure></blockquote>";
+    public static string $tags = "<br><p><i><u><h1><h2><h3><h4><h5><h6><strong><small><b><table><td><th><tr><a><ul><li><ol><tbody><figure></blockquote>";
 
     /**
      * @var array $databases
@@ -22,7 +22,7 @@ class conf
      * - 'public': Le nom d'utilisateur à utiliser pour se connecter à la base de données.
      * - 'password': Le mot de passe à utiliser pour se connecter à la base de données.
      */
-    public static $databases = array(
+    public static array $databases = array(
         'default' => array(
             'host' => 'db',
             'database' => 'humanRessource',

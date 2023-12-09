@@ -1,7 +1,7 @@
 <?php
 class countrie extends Model
 {
-    var $table = "countries";
+    var string $table = "countries";
     public function getAllcountries(): false|array|null
     {
         return $this->find(array(

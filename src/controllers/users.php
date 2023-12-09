@@ -1,7 +1,7 @@
 <?php
 class users extends controller
 {
-    var $user;
+    var mixed $user;
     public function __construct()
     {
         parent::__construct();
@@ -9,7 +9,7 @@ class users extends controller
         $this->user = $this->models['user'];
     }
 
-    public function index()
+    public function index(): void
     {
         $d = [];
         if (!empty($_POST)) {
@@ -33,7 +33,7 @@ class users extends controller
             $this->render('index');
         }
     }
-    public function logout()
+    public function logout(): void
     {
         unset($_SESSION['User']);
         $this->layout = 'default';

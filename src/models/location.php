@@ -1,7 +1,7 @@
 <?php
 class location extends Model
 {
-    var $table = "locations";
+    var string $table = "locations";
     public function getAlllocations(): false|array|null
     {
         return $this->find(array(
