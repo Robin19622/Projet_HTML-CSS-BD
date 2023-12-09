@@ -1,7 +1,6 @@
 <?php
 class users extends controller
 {
-
     var $employee;
     var $departement;
     var $countrie;
