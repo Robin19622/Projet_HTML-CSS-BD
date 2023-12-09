@@ -2,8 +2,8 @@
 
 class locations extends controller
 {
-    var $location;
-    var $countrie;
+    var mixed $location;
+    var mixed $countrie;
 
     public function __construct()
     {
@@ -74,7 +74,7 @@ class locations extends controller
         }
     }
 
-    public function admin_delete($id): void
+    public function admin_delete(int $id): void
     {
         if ($this->Session->isLogged()) {
             if ($this->location->deletelocation($id)) {

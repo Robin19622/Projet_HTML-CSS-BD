@@ -11,25 +11,25 @@ class Model
      * @var mixed $id
      * L'identifiant de l'objet.
      */
-    public $id;
+    public mixed $id;
 
     /**
      * @var string $table
      * Le nom de la table dans la base de données.
      */
-    public $table;
+    public string $table;
 
     /**
      * @var string $conf
      * Le nom de la configuration de la base de données à utiliser.
      */
-    public $conf = "default";
+    public string $conf = "default";
 
     /**
      * @var PDO $db
      * L'objet PDO pour la connexion à la base de données.
      */
-    public $db;
+    public PDO $db;
 
     /**
      * Le constructeur de la classe. Il initialise la connexion à la base de données.
@@ -58,7 +58,7 @@ class Model
      *
      * @param string|null $fields Les champs à lire. Si null, tous les champs sont lus.
      */
-    function read($fields = null)
+    function read(string $fields = null): void
     {
         if ($fields == null) {
             $fields = "*";
@@ -84,7 +84,7 @@ class Model
      * @param array $data Les critères de recherche.
      * @return array Les entrées trouvées.
      */
-    function find($data)
+    function find(array $data): array
     {
         $fields = "*";
         $inner = " ";
@@ -125,10 +125,10 @@ class Model
 
         $stmt = $this->db->prepare($sql);
         if ($stmt->execute()) {
-            $data = $stmt->fetchall(PDO::FETCH_OBJ);
-            return $data;
+            return $stmt->fetchall(PDO::FETCH_OBJ);
         } else {
             echo "<br/> erreur SQL";
+            return [];
         }
     }
 
@@ -138,7 +138,7 @@ class Model
      * @param array $data Les critères de recherche.
      * @return object La première entrée trouvée.
      */
-    function findFirst($data)
+    function findFirst(array $data): object
     {
         return current($this->find($data));
     }
@@ -149,7 +149,7 @@ class Model
      * @param array $data Les critères de suppression.
      * @return bool True si la suppression a réussi, false sinon.
      */
-    function delete($data)
+    function delete(array $data): bool
     {
         $condition = "1=1";
         if (isset($data['condition'])) {
@@ -162,16 +162,16 @@ class Model
             return true;
         } else {
             echo "<br/> erreur SQL";
+            return false;
         }
     }
 
     /**
      * Sauvegarde une entrée dans la base de données. Si l'identifiant de l'objet est défini, l'entrée existante est mise à jour. Sinon, une nouvelle entrée est créée.
-     *
      * @param array $data Les données à sauvegarder.
      * @return bool True si la sauvegarde a réussi, false sinon.
      */
-    function save($data)
+    function save(array $data): bool
     {
         foreach ($data as $key => $value) {
             $data[$key] = strip_tags($data[$key], conf::$tags);

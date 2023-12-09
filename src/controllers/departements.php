@@ -2,11 +2,11 @@
 
 class departements extends controller
 {
-    var $departement;
+    var mixed $departement;
 
-    var $employee;
+    var mixed $employee;
 
-    var $location;
+    var mixed $location;
 
     public function __construct()
     {
@@ -81,7 +81,7 @@ class departements extends controller
         }
     }
 
-    public function admin_delete($id): void
+    public function admin_delete(int $id): void
     {
         if ($this->Session->isLogged()) {
             if ($this->departement->deletedepartement($id)) {

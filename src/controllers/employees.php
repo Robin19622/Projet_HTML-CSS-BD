@@ -2,9 +2,9 @@
 
 class employees extends controller
 {
-    var $employee;
-    var $department;
-    var $job;
+    var mixed $employee;
+    var mixed $department;
+    var mixed $job;
 
     public function __construct()
     {
@@ -43,7 +43,7 @@ class employees extends controller
         }
     }
 
-    public function admin_edit($id = null): void
+    public function admin_edit( $id = null ): void
     {
         if ($this->Session->isLogged()) {
             if (!empty($_POST)) {
@@ -53,7 +53,7 @@ class employees extends controller
                     $this->Session->setFlash("action non effectue  ", '<i class="fas fa-times"></i>', "success");
                 }
                 $d = [];
-                $d['employees'] = $this->employee->getLast(10);
+                $d['employees'] = $this->employee->getLast(999);
                 $this->set($d);
                 $this->layout = 'admin';
                 $this->render('admin_index');
@@ -79,7 +79,7 @@ class employees extends controller
         }
     }
 
-    public function admin_delete($id): void
+    public function admin_delete(int $id): void
     {
         if ($this->Session->isLogged()) {
             if ($this->employee->deleteEmployee($id)) {

@@ -2,8 +2,8 @@
 
 class countries extends controller
 {
-    var $countrie;
-    var $region;
+    var mixed $countrie;
+    var mixed $region;
 
     public function __construct()
     {
@@ -74,7 +74,7 @@ class countries extends controller
         }
     }
 
-    public function admin_delete($id): void
+    public function admin_delete(int $id): void
     {
         if ($this->Session->isLogged()) {
             if ($this->countrie->deletecountrie($id)) {
@@ -96,6 +96,4 @@ class countries extends controller
             $this->render('index');
         }
     }
-
-
 }

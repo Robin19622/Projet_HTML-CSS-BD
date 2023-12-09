@@ -2,7 +2,7 @@
 
 class jobs extends controller
 {
-    var $job;
+    var mixed $job;
 
     public function __construct()
     {
@@ -37,7 +37,7 @@ class jobs extends controller
         }
     }
 
-    public function admin_edit($id = null): void
+    public function admin_edit( $id = null): void
     {
         if ($this->Session->isLogged()) {
             if (!empty($_POST)) {
@@ -70,7 +70,7 @@ class jobs extends controller
         }
     }
 
-    public function admin_delete($id): void
+    public function admin_delete(int $id): void
     {
         if ($this->Session->isLogged()) {
             if ($this->job->deleteJob($id)) {
