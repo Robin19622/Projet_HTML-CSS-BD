@@ -1,16 +1,15 @@
 <div class="container-fluid !direction !spacing">
     <div class="row">
-        <div class="col">
-            <br>
+        <div class="col mt-3">
             <h1> Les localisations </h1>
-            <br>
-            <div class="mb-3 d-flex justify-content-end">
-                <div class="input-group">
-                    <span class="input-group-text"><i class="fas fa-search"></i></span>
-                    <input type="search" id="searchInput" class="form-control form-control-sm" placeholder="Rechercher">
+            <div class="mb-5 mt-5  d-flex justify-content-end">
+                <div class="col-4">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="search" id="searchInput" class="form-control form-control-sm" placeholder="Rechercher">
+                    </div>
                 </div>
             </div>
-            <br>
             <table class="table">
                 <thead>
                 <tr class="bg-danger">
