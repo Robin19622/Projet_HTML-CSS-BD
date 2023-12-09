@@ -124,7 +124,6 @@ class Model
             ' ' . $limit;
 
         $stmt = $this->db->prepare($sql);
-        echo($sql);
         if ($stmt->execute()) {
             $data = $stmt->fetchall(PDO::FETCH_OBJ);
             return $data;
