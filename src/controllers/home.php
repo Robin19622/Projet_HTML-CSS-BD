@@ -22,11 +22,10 @@ class home extends controller
         $this->location = $this->models['location'];
     }
 
-    public function index()
+    public function index(): void
     {
         $d = [];
         $d['count_employees'] = $this->employee->getTotalEmployees();
-        var_dump($d['count_employees']);
         $departmentCounts = $this->departement->getDepartmentEmployeeCounts();
         $d['departmentCounts'] = $departmentCounts;
         $d['hiresByDate'] = $this->employee->getHiresByDate();
@@ -35,6 +34,4 @@ class home extends controller
         $this->set($d);
         $this->render('index');
     }
-
-
 }

@@ -2,10 +2,10 @@
 
 class jobhistorys extends controller
 {
-    var $jobhistory;
-    var $job;
+    var mixed $jobhistory;
+    var mixed $job;
 
-    var $department;
+    var mixed $department;
 
     public function __construct()
     {
@@ -79,7 +79,7 @@ class jobhistorys extends controller
         }
     }
 
-    public function admin_delete($id): void
+    public function admin_delete(int $id): void
     {
         if ($this->Session->isLogged()) {
             if ($this->jobhistory->deletejobhistory($id)) {
@@ -101,6 +101,4 @@ class jobhistorys extends controller
             $this->render('index');
         }
     }
-
-
 }

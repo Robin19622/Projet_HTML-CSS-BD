@@ -1,7 +1,7 @@
 <?php
 class job extends Model
 {
-    var $table = "jobs";
+    var string $table = "jobs";
     public function getAlljobs(): false|array|null
     {
         return $this->find(array(

@@ -1,7 +1,7 @@
 <?php
 class jobhistory extends Model
 {
-    var $table = "job_history";
+    var string $table = "job_history";
     public function getAlljobhistorys(): false|array|null
     {
         return $this->find(array(

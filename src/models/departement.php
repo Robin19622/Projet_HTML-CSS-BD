@@ -1,7 +1,7 @@
 <?php
 class departement extends Model
 {
-    var $table = "departments";
+    var string $table = "departments";
    public  function getAllDepartment(): false|array|null
     {
         return $this->find(array(
